@@ -1,12 +1,14 @@
 library(tidyverse)
 library(dplyr)
 library(here)
+library(usethis) 
+library(gitcreds)
 
 rawdat <- read.csv("Raw Data Area\\maternalmortality.csv", header = TRUE)
 write.csv(rawdat, file = "data\\maternalmortality.csv", row.names = FALSE)
 
 install.packages("usethis")
-library(usethis) 
+
 
 usethis::use_git_config(user.name = "My Name", user.email = "myemail@email.com")
 
@@ -17,7 +19,7 @@ usethis::create_github_token()
 
 install.packages("gitcreds")
 
-library(gitcreds)
+
 
 gitcreds::gitcreds_set()
 
@@ -31,4 +33,7 @@ pivoted <- pivot_longer(selectedCols,
              values_to = "MatMor",
              names_prefix = "X")
 
+saveRDS(pivoted, "data/pivotedMatData.rds")
+
 usethis::use_git_remote("origin", url = "https://github.com/j3dang/armed_conflict.git", overwrite = TRUE)
+
