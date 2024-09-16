@@ -31,3 +31,4 @@ pivoted <- pivot_longer(selectedCols,
              values_to = "MatMor",
              names_prefix = "X")
 
+usethis::use_git_remote("origin", url = "https://github.com/j3dang/armed_conflict.git", overwrite = TRUE)
