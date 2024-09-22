@@ -26,4 +26,5 @@ summary <- subsetted %>%
     drought = max(drought),     
   )
 
+usethis::use_git_remote("origin", url = NULL, overwrite = TRUE)
 usethis::use_github()
