@@ -69,7 +69,7 @@ consolidated_conflict <- conflict %>%
   summarise(deaths = sum(best, na.rm = TRUE))
 
 consolidated_conflict <- consolidated_conflict %>%
-  mutate(Year = year - 1) %>%
+  mutate(Year = year+1) %>%
   select(-year)
 
 covariates <- covariates %>%
@@ -81,3 +81,10 @@ analyticalset <- merged_mortality %>%
   full_join(covariates, by = c("ISO", "Year"))
 
 saveRDS(pivoted, "data/analyticalset.rds")
+
+names(analyticalset)
+
+options(tibble.width = Inf)
+
+analyticalset %>%
+  dplyr::filter(country_name == "Canada")
