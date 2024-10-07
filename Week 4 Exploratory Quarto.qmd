@@ -43,3 +43,20 @@ Checking global view of missing data:
 library(naniar)
 finaldata %>% vis_miss()
 ```
+
+Check trend of a country with known conflicts:
+```{r}
+finaldata %>% 
+  filter(Country.Name == "Afghanistan") %>%
+  ggplot(aes(x = Year, y = MaternalMortality)) +
+  geom_line() +
+  ggtitle("Trend in Maternal Mortality in Afghanistan")
+```
+
+
+
+
+
+
+
+
