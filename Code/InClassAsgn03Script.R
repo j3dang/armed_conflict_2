@@ -79,8 +79,3 @@ analyticalset <- merged_mortality %>%
   full_join(disasters, by = c("ISO", "Year")) %>%
   full_join(consolidated_conflict, by = c("ISO","Year")) %>%
   full_join(covariates, by = c("ISO", "Year"))
-
-
-usethis::use_git_remote("origin", url = "https://github.com/myrepo/armed_conflict_2.git", overwrite = TRUE)
-
-usethis::use_github()
