@@ -3,12 +3,16 @@ title: "CHL8010: Statistical Programming and Computation in Health Data"
 author: "Week 4 In-class Assignment"
 date: "2024-09-30"
 format: pdf
+embed-resources: true # Produces a standalone HTML file with no external dependencie
 ---
 
 ```{r}
-#| label: load-packages
-#| include: false
-source("../.Rprofile")
+##| label: load-packages
+##| include: false
+#source("../.Rprofile")
+library(here)
+library(dplyr)
+library(ggplot2)
 ```
 
 
