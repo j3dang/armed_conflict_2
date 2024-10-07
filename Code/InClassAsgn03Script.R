@@ -70,7 +70,7 @@ consolidated_conflict <- conflict %>%
 
 consolidated_conflict <- consolidated_conflict %>%
   mutate(Year = year - 1) %>%
-  select(-year) # Remove the original year column
+  select(-year)
 
 covariates <- covariates %>%
   mutate(Year = as.integer(year))
@@ -80,5 +80,7 @@ analyticalset <- merged_mortality %>%
   full_join(consolidated_conflict, by = c("ISO","Year")) %>%
   full_join(covariates, by = c("ISO", "Year"))
 
+
+usethis::use_git_remote("origin", url = "https://github.com/myrepo/armed_conflict_2.git", overwrite = TRUE)
+
 usethis::use_github()
-usethis::use_git_remote("origin", url = NULL, overwrite = TRUE)
