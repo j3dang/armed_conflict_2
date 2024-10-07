@@ -38,3 +38,8 @@ finaldata %>%
 
 Use the rest of the class time to explore the final data that will be used for analysis starting next week. At the end of the class, write a summary of your findings and push your **Quarto document (pdf)** to your repo. 
 
+Observations from Ecuador should look like this...
+```{r}
+finaldata %>%
+  dplyr::filter(country_name == "Ecuador")
+```
