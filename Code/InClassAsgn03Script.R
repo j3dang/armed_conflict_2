@@ -81,6 +81,7 @@ analyticalset <- merged_mortality %>%
   full_join(covariates, by = c("ISO", "Year"))
 
 saveRDS(analyticalset, "data/analyticalset.rds")
+write.csv(analyticalset, file = "data\\finaldata.csv", row.names = FALSE)
 
 names(analyticalset)
 
