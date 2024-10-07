@@ -9,15 +9,6 @@ write.csv(rawdat, file = "data\\maternalmortality.csv", row.names = FALSE)
 
 install.packages("usethis")
 
-#Legacy GitHub initiation codes
-#usethis::use_git_config(user.name = "My Name", user.email = "myemail@email.com")
-# to confirm, generate a git situation-report, your user name and email should appear under Git config (global)
-#usethis::git_sitrep()
-#usethis::create_github_token()
-#install.packages("gitcreds")
-#gitcreds::gitcreds_set()
-#usethis::use_github()
-
 selectedCols <- select(rawdat, Country.Name, X2000, X2001, X2002, X2003, X2004, X2005, X2006, X2007, X2008, X2009, X2010, X2011, X2012, X2013, X2014, X2015, X2016, X2017, X2018, X2019)
 
 pivoted <- pivot_longer(selectedCols, 
@@ -27,7 +18,4 @@ pivoted <- pivot_longer(selectedCols,
              names_prefix = "X")
 
 saveRDS(pivoted, "data/pivotedMatData.rds")
-
-#Legacy training code
-#usethis::use_git_remote("origin", url = "https://github.com/j3dang/armed_conflict.git", overwrite = TRUE)
 

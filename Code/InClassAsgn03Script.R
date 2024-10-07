@@ -79,3 +79,5 @@ analyticalset <- merged_mortality %>%
   full_join(disasters, by = c("ISO", "Year")) %>%
   full_join(consolidated_conflict, by = c("ISO","Year")) %>%
   full_join(covariates, by = c("ISO", "Year"))
+
+saveRDS(pivoted, "data/analyticalset.rds")

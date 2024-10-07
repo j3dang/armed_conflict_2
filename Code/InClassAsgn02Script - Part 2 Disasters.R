@@ -26,8 +26,4 @@ disasters <- subsetted %>%
     drought = max(drought),     
   )
 
-#Github legacy code for training and templating
-#usethis::use_git_remote("origin", url = NULL, overwrite = TRUE)
-#usethis::use_github()
-
 
