@@ -19,12 +19,15 @@ subsetted <- filtered[,c("Year", "ISO", "Disaster.Type")]
 subsetted$drought <- ifelse(subsetted$Disaster.Type == 'Drought', 1, 0)
 subsetted$earthquake <- ifelse(subsetted$Disaster.Type == 'Earthquake', 1, 0)
 
-summary <- subsetted %>%
+disasters <- subsetted %>%
   group_by(Year, ISO) %>%         
   summarize(
     earthquake = max(earthquake),        
     drought = max(drought),     
   )
 
-usethis::use_git_remote("origin", url = NULL, overwrite = TRUE)
-usethis::use_github()
+#Github legacy code for training and templating
+#usethis::use_git_remote("origin", url = NULL, overwrite = TRUE)
+#usethis::use_github()
+
+
