@@ -80,7 +80,7 @@ analyticalset <- merged_mortality %>%
   full_join(consolidated_conflict, by = c("ISO","Year")) %>%
   full_join(covariates, by = c("ISO", "Year"))
 
-saveRDS(pivoted, "data/analyticalset.rds")
+saveRDS(analyticalset, "data/analyticalset.rds")
 
 names(analyticalset)
 
@@ -88,3 +88,5 @@ options(tibble.width = Inf)
 
 analyticalset %>%
   dplyr::filter(country_name == "Canada")
+
+#system("git push -u origin master")
